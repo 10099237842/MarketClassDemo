@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CategoryViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    CategoryViewController * cateVC = [[CategoryViewController alloc]init];
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:cateVC];
+    UITabBarController * tabbarVC = [[UITabBarController alloc]init];
+    tabbarVC.viewControllers = @[nav];
+    self.window.rootViewController=  tabbarVC;
     return YES;
 }
 
